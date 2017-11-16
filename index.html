@@ -6,7 +6,7 @@
   </head>
   <body>
     <input type="file" id="files" name="files[]" multiple />
-    <embed id="list">
+    <output id="list"></output>
   </body>
   <script>
     function handleFileSelect(evt) {
@@ -27,7 +27,7 @@
           return function(e) {
             // Render thumbnail.
             var span = document.createElement('span');
-            span.innerHTML = ['<img class="thumb" src="', e.target.result,
+            span.innerHTML = ['<embed class="thumb" src="', e.target.result,
                               '" title="', escape(theFile.name), '"/>'].join('');
             document.getElementById('list').insertBefore(span, null);
           };
